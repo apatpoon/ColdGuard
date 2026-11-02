@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "claims_checked": 32,
+  "replication_rows": 3000,
+  "summary_rows": 10,
+  "scenarios": 5,
+  "protocols": 2,
+  "drift_pointwise_selected": 258,
+  "drift_pointwise_unsafe": 62,
+  "drift_pointwise_unsafe_caught": 61,
+  "drift_pointwise_false_promotions": 1
+}

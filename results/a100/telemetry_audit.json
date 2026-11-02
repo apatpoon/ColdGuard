@@ -1,0 +1,18 @@
+{
+  "policy_runs": 60,
+  "telemetry_interval_ms_configured": 200,
+  "telemetry_samples_reported": 77809,
+  "telemetry_lines_observed": 77809,
+  "telemetry_sample_count_matches": true,
+  "telemetry_sampling_errors": 0,
+  "all_memory_returned": true,
+  "all_guardrails_passed": true,
+  "host_total_memory_gib": 2003.8495597839355,
+  "host_min_available_memory_gib": 1864.4720573425293,
+  "host_peak_used_memory_gib": 139.37750244140625,
+  "host_max_load_1m": 29.50244140625,
+  "gpu_peak_increment_gib_min": 71.12652587890625,
+  "gpu_peak_increment_gib_max": 71.5382080078125,
+  "gpu_max_temperature_c": 64.0,
+  "gpu_max_power_w": 377.535
+}

@@ -1,0 +1,6 @@
+policy,policy_label,n_replays,n_trace_blocks,n_request_seeds,requests,cache_hits,cache_misses,compulsory_misses,eviction_misses,evictions,cache_hit_rate,cumulative_recovery_to_first_token_s,absolute_gpu_energy_kj,slo_violations,all_memory_returned,all_guardrails_passed
+coldguard_risk,ColdGuard,12,3,4,340,230,110,64,46,62,0.6764705882352942,3308.474607428536,386.05712935120823,0,True,True
+direct_risk,Direct risk,12,3,4,340,230,110,64,46,62,0.6764705882352942,3310.2280812273966,386.9112991785373,0,True,True
+lru,LRU,12,3,4,340,211,129,64,65,81,0.6205882352941177,3863.353692936129,442.4745691143195,0,True,True
+ttl_3d,TTL-3d,12,3,4,340,213,127,64,63,79,0.6264705882352941,3822.107472266187,434.3507555808822,0,True,True
+oracle,Oracle,12,3,4,340,249,91,64,27,43,0.7323529411764705,2752.0917099990183,335.49380046198235,0,True,True

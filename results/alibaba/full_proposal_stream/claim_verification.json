@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "claims_checked": 18,
+  "policies": 31,
+  "curves": 3131,
+  "selected_action_rows": 36929,
+  "original_forward_supported": 19,
+  "retained_under_full_upper_bound": 0,
+  "rerouted_to_shadow_only": 19
+}

@@ -1,0 +1,44 @@
+paths:
+  deployment_daily: data/synthetic/deployment_daily.parquet
+  episodes: data/synthetic/cold_episodes.parquet
+  landmarks: data/synthetic/cold_landmarks.parquet
+  artifacts_dir: artifacts/synthetic
+
+data:
+  workload: online
+  day_min: 0
+  day_max: 179
+  logical_keys: [app_id, model_id, site_id, pd_role]
+
+cold_definition:
+  sm_util_max: 1.0
+  zero_fraction_min: 0.90
+  min_observed_hours: 1.0
+  min_mem_gib_hours: 1.0
+
+label:
+  horizon_days: 7
+
+split:
+  train_end_day: 107
+  calibration_end_day: 143
+
+model:
+  random_seed: 20261027
+  max_rows_per_split: 200000
+  learning_rate: 0.06
+  max_iter: 140
+  max_leaf_nodes: 31
+  min_samples_leaf: 30
+  l2_regularization: 1.0
+  target_encoding_strength: 30.0
+
+risk:
+  # Looser than the real pilot because this small generated trace has only a
+  # few hundred calibration episodes and is used to exercise the code path.
+  target_false_reclaim_rate: 0.25
+  confidence: 0.90
+  threshold_grid_size: 60
+  minimum_selected: 50
+  minimum_uplift_over_ttl: 0.02
+

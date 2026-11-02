@@ -1,0 +1,63 @@
+{
+  "seed": 20261029,
+  "replications_per_scenario": 300,
+  "scenarios": {
+    "iid": {
+      "day_sd": 0.0,
+      "deployment_sd": 0.0,
+      "weight_sd": 0.25,
+      "test_shift": 0.0
+    },
+    "day_shock": {
+      "day_sd": 0.75,
+      "deployment_sd": 0.0,
+      "weight_sd": 0.25,
+      "test_shift": 0.0
+    },
+    "repeated_deployment": {
+      "day_sd": 0.0,
+      "deployment_sd": 0.9,
+      "weight_sd": 0.25,
+      "test_shift": 0.0
+    },
+    "two_axis_heavy_weight": {
+      "day_sd": 0.75,
+      "deployment_sd": 0.9,
+      "weight_sd": 1.2,
+      "test_shift": 0.0
+    },
+    "two_axis_test_shift": {
+      "day_sd": 0.75,
+      "deployment_sd": 0.9,
+      "weight_sd": 1.2,
+      "test_shift": 0.9
+    }
+  },
+  "protocols": [
+    "fixed_sequence_pointwise",
+    "threshold_bonferroni"
+  ],
+  "days_per_panel": 40,
+  "deployments": 160,
+  "episodes_per_panel": 320,
+  "landmarks_per_episode": 3,
+  "thresholds": [
+    0.015,
+    0.03,
+    0.045,
+    0.05999999999999999,
+    0.07499999999999998,
+    0.08999999999999998,
+    0.10499999999999998,
+    0.11999999999999998,
+    0.13499999999999998,
+    0.14999999999999997,
+    0.16499999999999998,
+    0.18
+  ],
+  "minimum_actions": 80,
+  "family_confidence": 0.95,
+  "dual_risk_budget": 0.1,
+  "estimand": "conditional expected pooled action and exposure ratios of the selected policy",
+  "scope": "empirical Monte Carlo stress test of the entire selection-and-forward-audit procedure; not a theorem"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "coldguard.shadow_gpu_bundle_audit.v1",
+  "run_root": "external_archive/extracted/artifacts/shadow_gpu/full_run_20261030T082536Z",
+  "design": {
+    "block": "complete_replication_round",
+    "seed": 20261030,
+    "randomized_within_block": true,
+    "primary_condition": "warm_host_cache",
+    "optional_condition": "first_run_after_reboot",
+    "experimental_unit": "complete independent process load-infer-unload cycle"
+  },
+  "expected_runs": 24,
+  "observed_runs": 24,
+  "completed_runs": 24,
+  "warmup_runs": 4,
+  "measured_runs": 20,
+  "guardrail_passes": 24,
+  "verified_manifest_artifacts": 264,
+  "telemetry_samples": 2495,
+  "failure_files": [],
+  "passed": true,
+  "issues": []
+}

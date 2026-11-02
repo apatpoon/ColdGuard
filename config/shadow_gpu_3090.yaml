@@ -1,0 +1,50 @@
+schema: coldguard.shadow_gpu_experiment.v1
+experiment_id: CG-HIL-3090-01
+device:
+  required_gpu_count: 1
+  expected_gpu: NVIDIA GeForce RTX 3090
+  minimum_vram_mib: 23000
+  dtype: float16
+models:
+  - model_id: qwen_0_5b
+    repository: Qwen/Qwen2.5-0.5B-Instruct
+    revision: TO_BE_PINNED_AFTER_DOWNLOAD
+    role: multi_resident_small
+  - model_id: qwen_1_5b
+    repository: Qwen/Qwen2.5-1.5B-Instruct
+    revision: TO_BE_PINNED_AFTER_DOWNLOAD
+    role: multi_resident_small
+  - model_id: qwen_3b
+    repository: Qwen/Qwen2.5-3B-Instruct
+    revision: TO_BE_PINNED_AFTER_DOWNLOAD
+    role: multi_resident_medium
+  - model_id: qwen_7b
+    repository: Qwen/Qwen2.5-7B-Instruct
+    revision: TO_BE_PINNED_AFTER_DOWNLOAD
+    role: standalone_large
+measurement:
+  warmup_cycles_per_model: 1
+  measured_cycles_per_model: 5
+  probe_prompt: "Summarize why unused GPU memory should be reclaimed safely."
+  max_new_tokens: 32
+  gpu_memory_poll_interval_ms: 50
+  unload_settle_timeout_s: 30
+design:
+  block: complete_replication_round
+  seed: 20261030
+  randomized_within_block: true
+  primary_condition: warm_host_cache
+  optional_condition: first_run_after_reboot
+  experimental_unit: complete independent process load-infer-unload cycle
+primary_endpoints:
+  - model_load_wall_s
+  - first_request_wall_s
+  - resident_vram_mib
+  - peak_vram_mib
+  - unload_to_baseline_s
+guardrails:
+  - process_exit_code
+  - cuda_oom
+  - gpu_memory_returned_within_timeout
+  - finite_latency_measurements
+

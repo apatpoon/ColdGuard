@@ -1,0 +1,5 @@
+coldguard_miss_losses,coldguard_miss_wins,comparator_policy,mean_coldguard_minus_comparator_hit_rate,mean_comparator_minus_coldguard_cache_misses,mean_comparator_minus_coldguard_energy_kj,mean_comparator_minus_coldguard_recovery_s,mean_comparator_minus_coldguard_slo_violations,median_comparator_minus_coldguard_cache_misses,miss_ties,n_paired_block_seed_gpu_units,reference_policy
+2,2,direct_risk,0.0,0.0,0.07118081894409196,0.14612281657173298,0.0,0.0,8,12,coldguard_risk
+0,8,lru,0.048669467787114847,1.5833333333333333,4.701453313592606,46.23992379229943,0.0,1.0,4,12,coldguard_risk
+0,6,ttl_3d,0.042717086834733894,1.4166666666666667,4.02446885247283,42.80273873647093,0.0,0.5,6,12,coldguard_risk
+8,0,oracle,-0.048669467787114847,-1.5833333333333333,-4.2136107407688215,-46.36524145245979,0.0,-1.0,4,12,coldguard_risk

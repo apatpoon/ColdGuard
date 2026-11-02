@@ -1,0 +1,30 @@
+{
+  "landmarks_path": "data/external/chutes/derived/cold_landmarks.parquet",
+  "landmarks": 1013187,
+  "episodes": 11595,
+  "chutes": 9039,
+  "train_chutes": 100,
+  "test_chutes": 1407,
+  "test_unseen_chutes": 1313,
+  "mapped_chutes": 3875,
+  "horizons_days": [
+    1,
+    3,
+    7,
+    14,
+    30
+  ],
+  "target_action_risk": 0.05,
+  "minimum_calibration_actions": 200,
+  "selected_policy_count": 0,
+  "rolling_selected_policy_count": 74,
+  "rolling_test_contract_pass_count": 74,
+  "resource_claim": "none; Chutes has no observed GPU residency or memory allocation",
+  "trace_sha256_verified": "74833c1469577c5d1f1ef9d7393d165dab31d29950f1d76fe906d5726594e9ec",
+  "trace_bytes": 91044147663,
+  "trace_rows": 6122413756,
+  "trace_row_groups": 6114,
+  "started_at_null_count": 0,
+  "chute_id_null_count": 0,
+  "future_covariate_path": "cold_age and weekday advance; previous-day requests become zero; other history features use last observation carried forward conditional on inactivity"
+}

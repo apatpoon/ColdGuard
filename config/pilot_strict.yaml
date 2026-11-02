@@ -1,0 +1,103 @@
+paths:
+  raw_daily_glob: data/raw/instance_daily/part_*.parquet
+  raw_weekly_glob: data/raw/instance_week_5min/part_*.parquet
+  app_metrics: data/raw/app_metrics.csv
+  deployment_daily: data/interim/deployment_daily_strict.parquet
+  episodes: data/interim/cold_episodes_strict.parquet
+  landmarks: data/interim/cold_landmarks_strict.parquet
+  landmarks_all: data/interim/cold_landmarks_all_strict.parquet
+  weekly_label_comparison: data/interim/weekly_label_comparison_strict.parquet
+  artifacts_dir: artifacts/pilot_strict
+  survival_artifacts_dir: artifacts/survival_strict
+  multihorizon_artifacts_dir: artifacts/multihorizon_strict
+  block_ltt_artifacts_dir: artifacts/block_ltt_strict
+  generalization_artifacts_dir: artifacts/generalization_strict
+  operational_artifacts_dir: artifacts/operational_horizons_strict
+  robustness_artifacts_dir: artifacts/robustness_strict
+  calibration_window_artifacts_dir: artifacts/calibration_window_strict
+  window_selector_artifacts_dir: artifacts/window_selector_strict
+
+compute:
+  duckdb_memory_limit: 10GB
+  duckdb_threads: 4
+  duckdb_temp_directory: data/interim/duckdb_tmp
+
+data:
+  workload: online
+  day_min: 0
+  day_max: 181
+  logical_keys: [app_id, model_id, site_id, pd_role]
+
+cold_definition:
+  sm_util_max: 0.1
+  zero_fraction_min: 0.90
+  min_observed_hours: 1.0
+  min_mem_gib_hours: 1.0
+
+label:
+  horizon_days: 7
+
+split:
+  train_end_day: null
+  calibration_end_day: null
+
+model:
+  random_seed: 20261027
+  max_rows_per_split: 300000
+  learning_rate: 0.06
+  max_iter: 180
+  max_leaf_nodes: 31
+  min_samples_leaf: 80
+  l2_regularization: 1.0
+  target_encoding_strength: 50.0
+
+risk:
+  target_false_reclaim_rate: 0.05
+  sensitivity_targets: [0.05, 0.075, 0.10, 0.15, 0.20]
+  action_risk_sensitivity_targets: [0.10, 0.15, 0.20]
+  confidence: 0.95
+  threshold_grid_size: 80
+  minimum_selected: 200
+  minimum_uplift_over_ttl: 0.05
+
+survival:
+  horizon_days: 7
+  target_resource_risk: 0.10
+  target_action_risk: 0.10
+  folds:
+    - {name: early, train_end_day: 36, calibration_end_day: 72, test_end_day: 108}
+    - {name: middle, train_end_day: 72, calibration_end_day: 108, test_end_day: 144}
+    - {name: late, train_end_day: 108, calibration_end_day: 144, test_end_day: 180}
+
+multihorizon:
+  horizons: [1, 3, 7, 14, 30]
+  train_end_day: 60
+  calibration_end_day: 120
+  test_end_day: 180
+  target_resource_risk: 0.10
+  target_action_risk: 0.10
+
+block_ltt:
+  block_days: [1, 3, 7]
+  confidence: 0.95
+  threshold_grid_size: 101
+
+generalization:
+  minimum_group_calibration_actions: 50
+
+robustness:
+  horizons: [1, 3, 7]
+  folds:
+    - {name: early, calibration_start_day: 61, calibration_end_day: 90, test_start_day: 91, test_end_day: 120}
+    - {name: middle, calibration_start_day: 91, calibration_end_day: 120, test_start_day: 121, test_end_day: 150}
+    - {name: late, calibration_start_day: 121, calibration_end_day: 150, test_start_day: 151, test_end_day: 180}
+
+calibration_window:
+  horizons: [1, 3, 7]
+  window_days: [30, 60, 90]
+  earliest_day: 61
+  test_folds:
+    - {name: early, test_start_day: 91, test_end_day: 120}
+    - {name: middle, test_start_day: 121, test_end_day: 150}
+    - {name: late, test_start_day: 151, test_end_day: 180}
+

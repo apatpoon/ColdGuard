@@ -1,0 +1,19 @@
+{
+  "schema": "coldguard.shadow_gpu_service_curve.v1",
+  "status": "descriptive_calibration_only",
+  "scope": "Qwen2.5 family, FP16, RTX 3090, warm host cache, isolated process",
+  "unit_of_analysis": "complete independent process load-infer-unload cycle",
+  "n_cycles": 20,
+  "n_model_sizes": 4,
+  "intercept_s": 1.006561553045217,
+  "slope_s_per_artifact_gib": 0.24094210782895664,
+  "implied_artifact_gib_per_s": 4.150374581722735,
+  "r_squared": 0.9984105182513122,
+  "rmse_s": 0.0486921204125494,
+  "params_intercept_s": 0.9891521076469147,
+  "slope_s_per_billion_params": 0.4931444923510236,
+  "params_r_squared": 0.9986024748697996,
+  "params_rmse_s": 0.045657352801995725,
+  "supported_params_b_min": 0.5,
+  "supported_params_b_max": 7.0
+}

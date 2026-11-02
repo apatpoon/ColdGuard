@@ -1,0 +1,37 @@
+schema: coldguard.vllm_hil_experiment.v1
+experiment_id: CG-HIL-VLLM-3090-02
+design:
+  seed: 20261030
+  warmup_blocks_per_session: 1
+  blocks_per_session: 4
+  sessions: 3
+  experimental_unit: complete independent vLLM server lifecycle
+  randomization: full factorial treatments randomized within each block
+  factors:
+    model_ids: [qwen_0_5b, qwen_1_5b, qwen_3b, qwen_7b]
+    cache_regimes: [warm, cold]
+    pressure_mib: [0, 2048]
+server:
+  host: 127.0.0.1
+  base_port: 28100
+  dtype: half
+  max_model_len: 2048
+  gpu_memory_utilization: 0.78
+  startup_timeout_s: 900
+  shutdown_timeout_s: 90
+measurement:
+  prompt: "Explain in one concise paragraph why a model-serving system should reclaim idle GPU memory safely."
+  max_tokens: 64
+  concurrency_levels: [1, 8, 32]
+  request_repetitions: 2
+  telemetry_interval_ms: 50
+  baseline_tolerance_mib: 160
+  baseline_consecutive_samples: 5
+  cooldown_temperature_c: 65
+  cooldown_timeout_s: 300
+guardrails:
+  require_no_unexpected_compute_processes: true
+  retain_failed_runs: true
+  never_overwrite_completed_runs: true
+  production_actions_authorized: false
+

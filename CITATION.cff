@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use ColdGuard, please cite the associated manuscript."
+title: "ColdGuard: Risk-Calibrated Qualification of Model Residency in Finite-Capacity MaaS Systems"
+type: software
+version: 1.0.0
+date-released: 2026-11-02
+license: MIT
+authors:
+  - family-names: Pan
+    given-names: Zhibin
+    orcid: "https://orcid.org/0009-0002-3150-6023"
+    affiliation: "Universiti Teknologi Malaysia"
+  - family-names: Ma
+    given-names: Fangyan
+    orcid: "https://orcid.org/0009-0003-8068-2012"
+  - family-names: Ji
+    given-names: Ziyi
+    affiliation: "Universiti Teknologi Malaysia"
+  - family-names: Wang
+    given-names: Yufei
+    orcid: "https://orcid.org/0009-0006-9460-7509"
+    affiliation: "Universiti Teknologi Malaysia"
+repository-code: "https://github.com/OWNER/REPOSITORY"
+abstract: >-
+  ColdGuard reconstructs right-censored model lifecycles, estimates coherent
+  multi-horizon revival risk, and qualifies finite-capacity model-residency
+  actions using explicit maturity, expiry, and abstention conditions.
+keywords:
+  - model-as-a-service
+  - GPU memory management
+  - survival analysis
+  - risk calibration
+  - model residency

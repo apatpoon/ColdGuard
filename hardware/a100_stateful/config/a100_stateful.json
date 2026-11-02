@@ -1,0 +1,67 @@
+{
+  "schema": "coldguard.a100_stateful_competition.v2",
+  "experiment_id": "CG-A100-STATEFUL-COMPETITION-02",
+  "seed": 20261030,
+  "request_order_seeds": [20261030, 20261031, 20261032, 20261033],
+  "runtime_root": "/workspace/coldguard-runtimes/vllm-0.32.0-cu130-py312",
+  "model_root": "/workspace/models",
+  "result_parent": "/workspace/coldguard-a100-stateful-results-v2",
+  "model": {
+    "repository": "Qwen/Qwen2.5-7B-Instruct",
+    "directory": "Qwen2.5-7B-Instruct",
+    "dtype": "bfloat16",
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.22,
+    "planned_reservation_gib": 18.0,
+    "max_model_len": 512,
+    "max_num_seqs": 1,
+    "enforce_eager": true
+  },
+  "logical_models": ["m1", "m2", "m3", "m4", "m5", "m6"],
+  "physical_gpus": [0, 1, 2, 3],
+  "port_base": 28300,
+  "port_stride_per_gpu": 10,
+  "blocks": [
+    {"block": 1, "start_day": 121, "end_day": 130},
+    {"block": 2, "start_day": 131, "end_day": 140},
+    {"block": 3, "start_day": 141, "end_day": 150}
+  ],
+  "policies": ["coldguard_risk", "direct_risk", "lru", "ttl_3d", "oracle"],
+  "capacity": {
+    "maximum_resident_models": 4,
+    "planned_gpu_budget_gib": 72.0,
+    "minimum_free_memory_gib_after_start": 4.0
+  },
+  "coldguard": {"horizon_days": 3, "qualification_threshold": 0.01456},
+  "server": {
+    "host": "127.0.0.1",
+    "startup_timeout_s": 600,
+    "shutdown_timeout_s": 60,
+    "memory_settle_timeout_s": 120
+  },
+  "measurement": {
+    "prompt": "Explain in one concise paragraph why idle GPU model memory should be reclaimed safely.",
+    "max_tokens": 64,
+    "slo_recovery_to_first_token_s": 45,
+    "telemetry_interval_ms": 200,
+    "cooldown_temperature_c": 72,
+    "cooldown_timeout_s": 300,
+    "baseline_tolerance_mib": 512,
+    "baseline_consecutive_samples": 5
+  },
+  "guardrails": {
+    "required_gpu_count": 4,
+    "required_gpu_name_contains": "A100",
+    "minimum_gpu_memory_gib": 75,
+    "minimum_system_memory_gib": 200,
+    "minimum_result_disk_free_gib": 20,
+    "expected_requests_per_replicate": 85,
+    "expected_request_rows": 340,
+    "expected_run_count": 60,
+    "expected_runs_per_gpu": 15,
+    "maximum_concurrent_policy_runs": 4,
+    "no_two_runs_share_a_gpu": true,
+    "never_overwrite_completed_runs": true,
+    "automatic_pod_stop": false
+  }
+}

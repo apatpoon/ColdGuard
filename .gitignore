@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+.venv-*/
+
+# Generated and large research artifacts
+artifacts/
+data/
+figures/
+work/
+logs/
+*.parquet
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.safetensors
+*.tar
+*.tar.gz
+*.zip
+
+# Runtime state and telemetry
+current_state*.json
+gpu*_events.jsonl
+gpu*_telemetry.csv
+master.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/

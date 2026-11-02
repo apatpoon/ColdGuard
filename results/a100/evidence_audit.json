@@ -1,0 +1,22 @@
+{
+  "schema": "coldguard.a100_stateful_evidence_audit.v2",
+  "generated_utc": "2026-10-30T16:09:00.213726+00:00",
+  "planned_runs": 60,
+  "observed_runs": 60,
+  "failed_run_ids": [],
+  "all_guardrails_passed": true,
+  "all_memory_returned": true,
+  "all_requests_completed": true,
+  "capacity_pilot_passed_all_four_gpus": true,
+  "preflight_passed": true,
+  "balanced_policy_by_block_and_gpu": true,
+  "policies_with_expected_block_seed_gpu_replays": [
+    "coldguard_risk",
+    "direct_risk",
+    "lru",
+    "oracle",
+    "ttl_3d"
+  ],
+  "inference_note": "The four GPU/request-order repetitions are blocked robustness repetitions of the same underlying trace, not four independent production traces. Cluster inferential claims by the three trace blocks.",
+  "complete": true
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "coldguard.shadow_gpu_analysis_provenance.v1",
+  "computed_at": "2026-10-30T08:38:03.809525+00:00",
+  "run_root": "external_archive/extracted/artifacts/shadow_gpu/full_run_20261030T082536Z",
+  "archive": "ColdGuard_GPU_20261030T082536Z.tar.gz",
+  "archive_sha256": "034b407fdc8c7148070b4b4380322f2e7272fccd00d8d46642ad6f51bf472ca2",
+  "analysis_mode": "descriptive-only",
+  "unit_of_analysis": "complete independent process load-infer-unload cycle",
+  "primary_analysis_set": "20 measured cycles; four warmup cycles retained but excluded",
+  "exclusions": [],
+  "result_available_before_analysis": true
+}

@@ -1,0 +1,14 @@
+{
+  "analysis": "full proposal stream extreme bounds and coupled tipping sensitivity",
+  "fraction_grid_step": 0.01,
+  "policies_audited": 31,
+  "originally_forward_supported": 19,
+  "full_bound_forward_supported": 0,
+  "shadow_only_unresolved_bound": 19,
+  "expired_recalibrate": 0,
+  "route_counts_all_calibration_qualified": {
+    "SHADOW_ONLY_UNRESOLVED_BOUND": 22,
+    "EXPIRED_RECALIBRATE": 9
+  },
+  "interpretation": "Endpoints are extreme-scenario sensitivity bounds. Intermediate q values form a coupled fractional sensitivity path, not an identified probability model."
+}
