@@ -66,4 +66,4 @@ The manuscript is being prepared for submission. Use [`CITATION.cff`](CITATION.c
 
 ## Contact
 
-Corresponding author: Zhibin Pan (`zhibin@graduate.utm.my`).
+Corresponding author: Zhibin Pan (`panzhibin93@gmail.com`).
