@@ -20,7 +20,7 @@ authors:
     given-names: Yufei
     orcid: "https://orcid.org/0009-0006-9460-7509"
     affiliation: "Universiti Teknologi Malaysia"
-repository-code: "https://github.com/OWNER/REPOSITORY"
+repository-code: "https://github.com/apatpoon/ColdGuard"
 abstract: >-
   ColdGuard reconstructs right-censored model lifecycles, estimates coherent
   multi-horizon revival risk, and qualifies finite-capacity model-residency

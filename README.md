@@ -22,8 +22,8 @@ These results are bounded to the released traces and frozen hardware design. The
 Python 3.11 or later is required. With [`uv`](https://docs.astral.sh/uv/):
 
 ```bash
-git clone https://github.com/OWNER/REPOSITORY.git
-cd REPOSITORY
+git clone https://github.com/apatpoon/ColdGuard.git
+cd ColdGuard
 uv sync --all-extras --locked
 uv run pytest
 ```
@@ -36,8 +36,6 @@ uv run coldguard synthetic --output data/synthetic/deployment_daily.parquet \
 uv run coldguard episodes --config config/synthetic.yaml
 uv run coldguard pilot --config config/synthetic.yaml
 ```
-
-The public GitHub URL placeholders above are replaced when the repository is created.
 
 ## Reproducing the paper evidence
 
