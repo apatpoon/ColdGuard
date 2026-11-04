@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use ColdGuard, please cite the associated manuscript."
-title: "ColdGuard: Risk-Calibrated Qualification of Model Residency in Finite-Capacity MaaS Systems"
+title: "ColdGuard: Censoring-Aware Risk Qualification for GPU Model Residency in Cloud MaaS"
 type: software
 version: 1.0.0
 date-released: 2026-11-02
@@ -23,11 +23,13 @@ authors:
 repository-code: "https://github.com/apatpoon/ColdGuard"
 abstract: >-
   ColdGuard reconstructs right-censored model lifecycles, estimates coherent
-  multi-horizon revival risk, and qualifies finite-capacity model-residency
-  actions using explicit maturity, expiry, and abstention conditions.
+  multi-horizon revival risk, and qualifies GPU model-residency actions in
+  finite-capacity cloud MaaS platforms using explicit maturity, expiry, and
+  abstention conditions.
 keywords:
+  - cloud computing
   - model-as-a-service
-  - GPU memory management
-  - survival analysis
-  - risk calibration
+  - GPU resource management
   - model residency
+  - survival analysis
+  - risk qualification
