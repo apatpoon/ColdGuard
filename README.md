@@ -1,6 +1,6 @@
 # ColdGuard
 
-ColdGuard is a qualification layer for model-residency decisions in finite-capacity Model-as-a-Service (MaaS) systems. It reconstructs right-censored model lifecycles, estimates coherent multi-horizon revival risk, and turns a proposed eviction into a time-bounded **retain / evict / abstain** decision. The repository accompanies the manuscript **“ColdGuard: Risk-Calibrated Qualification of Model Residency in Finite-Capacity MaaS Systems.”**
+ColdGuard is a cloud resource-control qualification layer for GPU model-residency decisions in finite-capacity Model-as-a-Service (MaaS) platforms. It reconstructs right-censored model lifecycles, estimates coherent multi-horizon revival risk, and turns a proposed deallocation or eviction into a time-bounded **retain / evict / abstain** decision. The repository accompanies the manuscript **“ColdGuard: Censoring-Aware Risk Qualification for GPU Model Residency in Cloud MaaS.”**
 
 ## What is included
 
@@ -62,7 +62,7 @@ The code and small derived result tables are released under the MIT License. Dat
 
 ## Citation
 
-The manuscript is being prepared for submission. Use [`CITATION.cff`](CITATION.cff) for the current author and title metadata; a DOI and final bibliographic record will be added after publication.
+Use [`CITATION.cff`](CITATION.cff) for the current author and manuscript-title metadata. A DOI and final bibliographic record will be added after publication.
 
 ## Contact
 
